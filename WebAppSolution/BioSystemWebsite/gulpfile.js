@@ -13,8 +13,8 @@ const browserSync = require('browser-sync').create();
  *  WEBSERVER
  ********************************************/
 function startWebServer(cb) {
-    browserSync.init({ server: { baseDir: "./" } });
-    watch("index.html").on('change', browserSync.reload);
+    browserSync.init({ server: { baseDir: "./wwwroot", index: "default.htm" } });
+    watch("default.htm").on('change', browserSync.reload);
     watch("*.html").on('change', browserSync.reload);
     watch("css/*.css").on('change', browserSync.reload);
     watch("js/*.js").on('change', browserSync.reload);
