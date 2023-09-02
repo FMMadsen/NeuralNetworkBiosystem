@@ -8,16 +8,38 @@ var documentInputElementUsername = null,
     documentInputElementPassword = null;
 */
 
+var canvasElement, ctx, canvasHeight, canvasWidth;
+
 // Set eventhandlers when document is loaded
 document.addEventListener('DOMContentLoaded', function () {
 
     initializeDocumentElements();
     initializeEventHandlers();
 
-    setTimeout(CheckAppLoginStatus, 500);
+    PaintInitialCanvas();
+
+    // StartGame();
+
+    // setTimeout(CheckAppLoginStatus, 500);
 });
 
 function initializeDocumentElements() {
+    canvasElement = document.getElementById("main-canvas");
+    canvasWidth = canvasElement.width;
+    canvasHeight = canvasElement.height;
+
+    if (canvasElement == null) {
+        //Do something error handling if the canvas html was not found
+    }
+
+    if (!canvasElement.getContext) {
+        //Error handling
+    }
+
+    ctx = canvasElement.getContext("2d");
+
+
+
 
     /*
     documentButtonLogin = document.getElementById('login-button');
@@ -43,8 +65,26 @@ function initializeEventHandlers() {
 
 }
 
+function PaintInitialCanvas() {
+
+    //ctx.fillRect(0, 0, canvasWidth, canvasHeight)
+}
 
 
+function StartGame() {
+    window.requestAnimationFrame(gameLoop);
+}
+
+function gameLoop(timeStamp) {
+    draw();
+    window.requestAnimationFrame(gameLoop);
+}
+
+function draw() {
+    let randomColor = Math.random() > 0.5 ? '#ff8080' : '#0099b0';
+    ctx.fillStyle = randomColor;
+    ctx.fillRect(50, 50, 100, 100);
+}
 
 /*
 function login_clicked() {

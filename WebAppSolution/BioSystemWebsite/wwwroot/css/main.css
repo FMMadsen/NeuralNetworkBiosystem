@@ -5,7 +5,7 @@ body {
   margin: 0;
   font-family: Verdana;
   font-size: 16px;
-  background-color: snow;
+  background-color: dodgerblue;
 }
 
 .main {
@@ -16,19 +16,35 @@ body {
   top: 0px;
 }
 
-.app-box-centered {
+.box-centered {
     position: absolute;
     top: 50%;
     left: 50%;
     max-width: 800px;
     width: 80%;
+    height: 80%;
     transform: translate(-50%, -50%);
+    border-style: double;
+    border-width: 20px;
+    border-color: blue;
+    margin: 10px;
+    padding: 10px;;
 }
 
 /** Context specific unique containers **/
 /****************************************/
 
-
+#main-canvas {
+  /* width: 80%;
+  height: 600px; */
+  border-style: solid;
+  border-width: 16px;
+  border-color: lightskyblue;
+  margin: 1px;
+  padding: 1px;
+  border-radius: 100px;
+  background-color: darkgreen;
+}
 
 
 /** Generic Styling **/
